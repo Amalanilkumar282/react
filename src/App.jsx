@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import TodoForm from './components/TodoForm'
-import TodoList from './components/TodoListFixed'
+import TodoList from './components/TodoList'
 
 export default function App() {
   const [todos, setTodos] = useState(() => {
