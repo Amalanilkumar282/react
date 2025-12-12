@@ -1,0 +1,52 @@
+@use './variables' as vars;
+
+%button-base { padding: 8px 12px; border: none; cursor: pointer; }
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: vars.$bg;
+  margin: 0;
+  padding: 20px;
+}
+
+.container {
+  max-width: vars.$max-w;
+  margin: 0 auto;
+  background: vars.$card-bg;
+  padding: 20px;
+  border-radius: vars.$radius;
+  box-shadow: vars.$shadow;
+
+  h1 { margin-top: 0; }
+
+  .todo-form {
+    display: flex;
+    gap: vars.$gap;
+    margin-bottom: 12px;
+
+    input { flex: 1; padding: 8px; border: 1px solid vars.$input-border; border-radius: 4px; }
+    button { @extend %button-base; }
+  }
+
+  .todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .todo-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px solid vars.$border-muted;
+
+      label { display: flex; align-items: center; gap: vars.$gap; }
+
+      &.done span { text-decoration: line-through; color: vars.$muted; }
+
+      button { background: transparent; border: none; color: vars.$danger; cursor: pointer; }
+    }
+  }
+}
